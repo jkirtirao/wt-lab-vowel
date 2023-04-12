@@ -9,27 +9,35 @@
 		var string = prompt("Enter a string");
 
 	if(isNaN(string)){
+
 		for(i=0; i<string.length; i++){
+
 			var char = string.charAt(i);
+
 			if(char=='A' || char=='a' || char=='E' || char=='e' || char=='I' || char=='i' || char=='O' || char=='o' || char=='U' || char=='u'){
 
 	
 				if(i<string.length){
-						alert("The position of left most vowel is " + (i+1));
- 				} 
+					alert("The position of left most vowel is " + (i+1));
+					break;
+					
+ 				} else {
+					alert("No vowel found in the entered string");
+				}
 
-			} else {
-				alert("No vowel found in the entered string");
-			}
+			} 
+
 		}
 
-	} else {
+
+	} else { 
+
 		var num, rev=0 , rem;
 		num=parseInt(string);
 
 		while(num!=0){
 			rem = num % 10;
-			num=parseInt(num/10);
+			num = parseInt(num/10);
 			rev = rev * 10 + rem;
 		}
 		alert("Reverse of " + string + " is " + rev);
